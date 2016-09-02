@@ -2,6 +2,7 @@ if !exists("g:__XPT_VIM__")
     finish
 endif
 XPTemplate priority=personal
+XPTvar $SParg      ''
 
 XPT f " function ( .. ) {..}
 function` (`^) {
@@ -16,8 +17,8 @@ console.trace(`"value"^)`;^
 ..XPT
 
 XPT fori " with hasOwnProperty support
-for( `key^ in `object^ ) {
-  if( `object^.hasOwnProperty(`key^) ) {
+for (`key^ in `object^) {
+  if (`object^.hasOwnProperty(`key^)) {
       `//body^
   }
 }`^
@@ -25,7 +26,7 @@ for( `key^ in `object^ ) {
 
 XPT forop "optimizet for
 var `i^, `len^, `item^;
-for( `i^ = `0^, `len^ = `object^.lenght; `i^ < `len^; `i^++ ) {
+for (`i^ = `0^, `len^ = `object^.lenght; `i^ < `len^; `i^ += 1) {
   `item^ = `object^[`i^];
   `cursor^
 }
@@ -53,3 +54,13 @@ xsyst.registry.render('`widget^', {`^}, function(output){
 
 XPT req
 var `module^ = require('`module^');
+
+XPT class
+var `ClassName^ = function(`params^) {
+  
+
+  return $.extend(this, {
+
+  });
+};
+
